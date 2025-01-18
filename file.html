@@ -1,0 +1,460 @@
+como puedo hacer que que mi archivo index cargue especificamente una etiqueta del menu con django ; ejemplo , aquien index quiero que cargue el menu siguiente ; mi index ; {% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IPSI Wayuu Talatshi - Servicios médicos para la comunidad Wayuu">
+    <title>IPSI WAYUU TALATSHI</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" href="{% static 'image/favicon.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+
+<!-- Hero Section -->
+<section id="inicio">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'image/wayuu.png' %}" class="d-block w-120 img-fluid mx-auto" alt="Tradición Wayuu">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'image/wayuu2.jpg' %}" class="d-block w-120 img-fluid mx-auto" alt="Cultura Wayuu">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+        </button>
+    </div>
+</section>
+
+<a href="https://wa.me/+573187127079?text=Me%20gustaría%20saber%20más" class="whatsapp" target="_blank">
+    <i class="fa fa-whatsapp whatsapp-icon"></i>
+  </a>
+  
+<!-- Encabezado -->
+<header class="header">
+    <h1>SALUD PARA TODOS</h1>
+  </header>
+
+  <div class="container" style="max-width: 800px; margin: 0 auto;">
+    <div class="content-container mt-4">
+        <h2 class="section-title mb-4" style="color: rgb(37, 119, 37); font-family: Arial, sans-serif; font-weight: bold;">Nuestra Misión</h2>
+        <p class="lead" style="font-family: Arial, sans-serif; font-weight: bold;">
+            En Wayuu Talatshi IPSI, nuestra misión es honrar y cuidar a nuestras comunidades, respetando profundamente sus tradiciones y necesidades. Nos dedicamos a ofrecer servicios de salud de la más alta calidad, siempre comprometidos con el bienestar integral de nuestros usuarios.
+        </p>
+        <p style="font-family: Arial, sans-serif; font-weight: bold;">
+            Trabajamos incansablemente para fomentar una relación transparente y cercana con quienes depositan su confianza en nosotros.
+        </p>
+    </div>
+</div>
+
+  <section id="carousel-section" class="py-5 bg-white">
+    <div class="container">
+        <div id="sppb-carousel1" class="carousel slide" data-bs-ride="carousel">
+            <!-- Indicadores -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#sppb-carousel1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#sppb-carousel1" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#sppb-carousel1" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <!-- Slides -->
+            <div class="carousel-inner">
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                    <img src="{% static 'image/4.jpg' %}" class="d-block img-fluid mx-auto" alt="Salud para Todos">
+                    <div class="carousel-caption d-flex flex-column justify-content-center align-items-center bg-dark bg-opacity-50 p-3 rounded">
+                        <h3 class="text-white fw-bold">"Tu salud es nuestra prioridad"</h3>
+                        <p class="text-light">Trabajamos para fortalecer la salud en nuestras comunidades.</p>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="carousel-item">
+                    <img src="{% static 'image/9.png' %}" class="d-block img-fluid mx-auto" alt="Compromiso">
+                    <div class="carousel-caption d-flex flex-column justify-content-center align-items-center bg-dark bg-opacity-50 p-3 rounded">
+                        <h3 class="text-white fw-bold">"Comprometidos con tu bienestar"</h3>
+                        <p class="text-light">Trabajamos para fortalecer la salud en nuestras comunidades.</p>
+                    </div>
+                </div>
+         <!-- Slide 3 -->
+<div class="carousel-item">
+    <img src="{% static 'image/2.png' %}" class="d-block img-fluid mx-auto" alt="Transparencia">
+    <div class="carousel-caption d-flex flex-column justify-content-center align-items-center bg-dark bg-opacity-50 p-3 rounded">
+        <h3 class="text-white fw-bold" style="font-size: 1.25rem; opacity: 0.8;">"Relación cercana y transparente"</h3>
+        <p class="text-light" style="font-size: 0.875rem; opacity: 0.8;">Construimos confianza a través de nuestras acciones.</p>
+    </div>
+</div>
+            <!-- Controles -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#sppb-carousel1" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#sppb-carousel1" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+        </div>
+    </div>
+</section>
+
+
+<section class="mapa py-5">
+    <div class="container">
+        <!-- Título estilizado -->
+        <h2 class="text-success text-uppercase fw-bold mb-4 display-6 text-center">Nuestra Ubicación</h2>
+        <div class="map-container rounded overflow-hidden shadow-lg">
+            <!-- Mapa de Google Maps embebido -->
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.679251555791!2d-72.23552398456254!3d11.387687591803588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e7ebc0c6b67d531%3A0x0!2zMTHCsDIzJzE1LjciTiA3MsKwMTQnMDYuMiJX!5e0!3m2!1ses!2sco!4v1694228345834!5m2!1ses!2sco" 
+                width="100%" 
+                height="400" 
+                class="border-0"
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </div>
+</section>
+
+<!-- Footer with Logos -->
+<div class="footer-logos bg-light py-4">
+    <div class="container text-center">
+        <!-- Title -->
+        <h2 class="text-success mb-4" style="font-size: 1.5rem;">CONOCE NUESTROS ALIADOS.</h1>
+        <div class="row justify-content-center align-items-center">
+            <!-- Logo 1 -->
+            <div class="col-6 col-md-2 d-flex justify-content-center align-items-center">
+                <a href="https://dusakawiepsi.com/" target="_blank" rel="noopener noreferrer">
+                    <img src="{% static 'image/logo1.png' %}" alt="Dusakawi EPSI" class="img-fluid footer-logo">
+                </a>
+            </div>
+            <!-- Logo 2 -->
+            <div class="col-6 col-md-2 d-flex justify-content-center align-items-center">
+                <a href="https://www.cajacopieps.com/" target="_blank" rel="noopener noreferrer">
+                    <img src="{% static 'image/logo3.png' %}" alt="Cajacopi EPS" class="img-fluid footer-logo">
+                </a>
+            </div>
+            <!-- Logo 3 -->
+            <div class="col-6 col-md-2 d-flex justify-content-center align-items-center">
+                <a href="https://www.nuevaeps.com.co/" target="_blank" rel="noopener noreferrer">
+                    <img src="{% static 'image/Logo2.png' %}" alt="Nueva EPS" class="img-fluid footer-logo">
+                </a>
+            </div>
+            <!-- Logo 4 -->
+            <div class="col-6 col-md-2 d-flex justify-content-center align-items-center">
+                <a href="https://www.supersalud.gov.co/es-co/Paginas/Home.aspx" target="_blank" rel="noopener noreferrer">
+                    <img src="{% static 'image/supersalud.png' %}" alt="Vigilado Supersalud" class="img-fluid footer-logo">
+                </a>
+            </div>
+            <!-- Logo 5 -->
+            <div class="col-6 col-md-2 d-flex justify-content-center align-items-center">
+                <a href="https://www.minsalud.gov.co/Portada/index.html" target="_blank" rel="noopener noreferrer">
+                    <img src="{% static 'image/logo5.png' %}" alt="Minsalud" class="img-fluid footer-logo">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark text-light py-4">
+    <div class="container">
+        <div class="row">
+            <!-- Logo and Description -->
+            <div class="col-md-4 text-center">
+                <img src="{% static 'image/logo.png' %}" alt="Logo IPSI Wayuu Talatshi" style="height: 100px;">
+                <p class="mt-5">
+                    Está conformada por un grupo de profesionales especializados, con reconocida experiencia y alto nivel profesional, comprometidos con valores de excelencia, honestidad, confidencialidad, respeto, vocación de servicio en beneficio de la población Wayuu.
+                </p>
+            </div>
+            <!-- Contact Section -->
+            <div class="col-md-4 text-center">
+                <h5 class="text-success">Contactenos</h5>
+                <p><i class="fa-solid fa-phone text-success"></i> Llámanos ahora: <a href="tel:+573187127079" class="text-light">+57 3187127079</a></p>
+                <p><i class="fa-solid fa-envelope text-success"></i> Email: <a href="mailto:gerencia@ipsiwayuutalatshi.com" class="text-light">gerencia@ipsiwayuutalatshi.com</a></p>
+                <p><i class="fa-solid fa-location-dot text-success"></i> Cra. 15 #5-1 5-105, Maicao, La Guajira, Colombia</p>
+            </div>
+            <!-- Useful Links -->
+            <div class="col-md-4 text-center">
+                <h5 class="text-success">Useful Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-light">Misión</a></li>
+                    <li><a href="#" class="text-light">Visión</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col text-center">
+                <a href="#" class="text-light me-3"><i class="fa-brands fa-facebook fa-2x"></i></a>
+                <a href="#" class="text-light me-3"><i class="fa-brands fa-instagram fa-2x"></i></a>
+                <a href="#" class="text-light"><i class="fa-brands fa-youtube fa-2x"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate__animated', 'animate__slideInUp');
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        const carouselSection = document.querySelector('#carousel-section');
+        observer.observe(carouselSection);
+    });
+</script>
+
+<!-- Default Footer -->
+<footer class="bg-primary text-white text-center py-3">
+    <p>&copy; 2024 IPSI Wayuu Talatshi. Todos los derechos reservados.</p>
+</footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> ; este menu {% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IPSI Wayuu Talatshi - Servicios médicos para la comunidad Wayuu">
+    <title>{% block title %}IPSI WAYUU TALATSHI{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mundo.css' %}">
+    <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"> <!-- FontAwesome -->
+    <link rel="icon" href="{% static 'image/favicon.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  
+    
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <!-- ESTE MENU -->
+    <div class="header bg-success text-white text-center py-3">
+        <div class="container">
+            <h6 class="mb-0 fw-bold">BIENVENIDO AL SITIO WEB OFICIAL</h6>
+        </div>
+    </div>    
+    <!-- ...rest of the code... -->
+</body>
+</html>
+  <!-- Info Section -->
+  <div class="info-section">
+    <div class="container">
+      <div class="row text-center">
+        <!-- Logo Section -->
+        <div class="col-md-4 d-flex flex-column align-items-center">
+          <div class="logo">
+            <img src="{% static 'image/wayuu.png' %}" alt="Logo">
+          </div>
+          <h6>IPSI WAYUU TALATSHI</h6>
+          <p>SALUD PARA TODOS</p>
+        </div>
+
+        <!-- Grouped Information Section -->
+        <div class="col-md-8">
+          <div class="group">
+            <!-- Office Hours Section -->
+            <div>
+              <h6 class="icon-text">
+                <i class="fa-solid fa-clock"></i> Horario de Atención:
+              </h6>
+              <p>Lunes a Viernes</p>
+              <p>7:00 am a 11:30 am</p>
+              <p>1:20 pm a 5:00pm</p>
+              <p>Sabados 7:00 am a 12:pm </p>
+            </div>
+
+            <!-- Contact Information Section -->
+            <div>
+              <h6 class="icon-text">
+                <i class="fa-solid fa-phone"></i> Llámanos:
+              </h6>
+              <p>+57 3182825057</p>
+              <p>+57 3183239787</p>
+              <p>+57 3202186075</p>
+              <p>+57 3185479916</p>
+            </div>
+
+            <!-- Address Section -->
+            <div>
+              <h6 class="icon-text">
+                <i class="fa-solid fa-location-dot"></i> Dirección:
+              </h6>
+              <p>Cra. 15 #5-1 5-105,</p>
+              <p>Maicao, La Guajira, Colombia</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+    <div class="container">
+        <a class="navbar-brand display-6 text-uppercase fw-bold text-white" href="{% url 'index' %}">IPSI WAYUU TALATSHI</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'index' %}">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contacto' %}">Servicio al Ciudadano</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'servicios' %}">Nuestros Servicios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'servicios' %}">Informes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'servicios' %}">Finanzas</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+    <!-- ESTE MENU -->
+
+<section id="inicio">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'image/wayuu.png' %}" class="d-block w-120 img-fluid mx-auto" alt="Tradición Wayuu">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'image/wayuu2.jpg' %}" class="d-block w-120 img-fluid mx-auto" alt="Cultura Wayuu">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+        </button>
+    </div>
+</section>
+
+{% block content %}
+{% endblock %}
+
+<!-- Footer with Logos -->
+<div class="footer-logos bg-light py-4">
+  <div class="container text-center">
+      <!-- Title -->
+      <h2 class="text-success mb-4" style="font-size: 1.5rem;">CONOCE NUESTROS ALIADOS.</h1>
+      <div class="row justify-content-center align-items-center">
+          <!-- Logo 1 -->
+          <div class="col-6 col-md-2 d-flex justify-content-center align-items-center">
+              <a href="https://dusakawiepsi.com/" target="_blank" rel="noopener noreferrer">
+                  <img src="{% static 'image/logo1.png' %}" alt="Dusakawi EPSI" class="img-fluid footer-logo">
+              </a>
+          </div>
+          <!-- Logo 2 -->
+          <div class="col-6 col-md-2 d-flex justify-content-center align-items-center">
+              <a href="https://www.cajacopieps.com/" target="_blank" rel="noopener noreferrer">
+                  <img src="{% static 'image/logo3.png' %}" alt="Cajacopi EPS" class="img-fluid footer-logo">
+              </a>
+          </div>
+          <!-- Logo 3 -->
+          <div class="col-6 col-md-2 d-flex justify-content-center align-items-center">
+              <a href="https://www.nuevaeps.com.co/" target="_blank" rel="noopener noreferrer">
+                  <img src="{% static 'image/Logo2.png' %}" alt="Nueva EPS" class="img-fluid footer-logo">
+              </a>
+          </div>
+          <!-- Logo 4 -->
+          <div class="col-6 col-md-2 d-flex justify-content-center align-items-center">
+              <a href="https://www.supersalud.gov.co/es-co/Paginas/Home.aspx" target="_blank" rel="noopener noreferrer">
+                  <img src="{% static 'image/supersalud.png' %}" alt="Vigilado Supersalud" class="img-fluid footer-logo">
+              </a>
+          </div>
+          <!-- Logo 5 -->
+          <div class="col-6 col-md-2 d-flex justify-content-center align-items-center">
+              <a href="https://www.minsalud.gov.co/Portada/index.html" target="_blank" rel="noopener noreferrer">
+                  <img src="{% static 'image/logo5.png' %}" alt="Minsalud" class="img-fluid footer-logo">
+              </a>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark text-light py-4">
+    <div class="container">
+        <div class="row">
+            <!-- Logo and Description -->
+            <div class="col-md-4 text-center">
+                <img src="{% static 'image/logo.png' %}" alt="Logo IPSI Wayuu Talatshi" style="height: 100px;">
+                <p class="mt-3">
+                    Está conformada por un grupo de profesionales especializados, con reconocida experiencia y alto nivel profesional, comprometidos con valores de excelencia, honestidad, confidencialidad, respeto, vocación de servicio en beneficio de la población Wayuu.
+                </p>
+            </div>
+            <!-- Contact Section -->
+            <div class="col-md-4 text-center">
+                <h5 class="text-success">Contactenos</h5>
+                <p><i class="fa-solid fa-phone text-success"></i> Llámanos ahora: <a href="tel:+573202186075" class="text-light">+57 3202186075</a></p>
+                <p><i class="fa-solid fa-envelope text-success"></i> Email: <a href="mailto:gerencia@ipsiwayuutalatshi.com" class="text-light">gerencia@ipsiwayuutalatshi.com</a></p>
+                <p><i class="fa-solid fa-location-dot text-success"></i> Cra. 15 #5-1 5-105 Maicao, La Guajira, Colombia</p>
+            </div>
+            <!-- Useful Links -->
+            <div class="col-md-4 text-center">
+                <h5 class="text-success">Useful Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-light">Misión</a></li>
+                    <li><a href="#" class="text-light">Visión</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col text-center">
+                <a href="#" class="text-light me-3"><i class="fa-brands fa-facebook fa-2x"></i></a>
+                <a href="#" class="text-light me-3"><i class="fa-brands fa-instagram fa-2x"></i></a>
+                <a href="#" class="text-light"><i class="fa-brands fa-youtube fa-2x"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<a href="https://wa.me/+573187127079?text=Me%20gustaría%20saber%20más" class="whatsapp" target="_blank">
+    <i class="fa fa-whatsapp whatsapp-icon"></i>
+  </a>
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+ 

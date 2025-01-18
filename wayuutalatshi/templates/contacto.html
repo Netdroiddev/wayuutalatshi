@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        body {
+            background-color: #f4f4f4 !important; /* Cambia el color de fondo de la página */
+        }
+
+        .hidden-service {
+            display: none; /* Oculta los servicios */
+        }
+
+        /* Clase para cambiar el fondo solo del contenido */
+        .custom-bg {
+            background-color: #5b9ca5; /* Cambia el color del fondo de la sección */
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        /* Estilos para el título h1 */
+        h1.display-4 {
+            color: #2c3e50; /* Un color más oscuro (oscuro gris/azul) */
+            font-weight: 700; /* Más grueso */
+        }
+
+        /* Estilos para los campos vacíos */
+        .input-error {
+            border: 2px solid #ff0000; /* Borde rojo */
+            background-color: #ffe6e6; /* Fondo rojo claro */
+            animation: shake 0.5s ease; /* Animación de sacudida para llamar la atención */
+        }
+
+        /* Animación para sacudir el campo */
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5 custom-bg"> <!-- Aplicamos la clase 'custom-bg' aquí -->
+    <!-- Título principal -->
+    <h1 class="text-center display-4">Radicar PQRSF</h1>
+    
+    <!-- Nuevo texto introductorio -->
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+            <p class="text-center lead">Visto: 99902</p>
+            <p class="text-justify">
+                <strong>Estimado usuario,</strong><br>
+                Apreciamos su tiempo y su interés en ayudarnos a mejorar nuestros servicios. Para garantizar que su experiencia sea lo más satisfactoria posible, hemos dispuesto un sistema para registrar sus <strong>peticiones, quejas, reclamos</strong> y <strong>sugerencias</strong>. Nos comprometemos a atender su solicitud de manera rápida y eficaz.<br>
+                Gracias por ayudarnos a crecer.
+            </p>
+        </div>
+    </div>
+
+    <!-- Formulario de contacto -->
+    <h1 class="text-center display-4">Radica Aqui</h1>   <!-- Título con estilo diferente -->
+    <div class="row justify-content-center">
+        <!-- Añadir margen izquierdo para mover el formulario hacia la derecha -->
+        <div class="col-12 col-md-8 col-lg-6" style="margin-left: 10%;">  <!-- Ajusta el valor para mover más o menos -->
+            <form id="pqrsfForm" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="d-flex justify-content-center mt-2"> <!-- Centrar el botón -->
+                    <button type="submit" class="btn btn-success btn-sm" style="font-weight: bold; padding: 10px 10px;">Enviar solicitud</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Espacio adicional abajo -->
+<div class="mb-5"></div>  <!-- Añadido margen inferior para espacio adicional -->
+
+<script>
+    document.getElementById('pqrsfForm').addEventListener('submit', async (event) => {
+        event.preventDefault();
+        
+        let valid = true;
+        const form = event.target;
+        const formData = new FormData(form);
+
+        // Limpiar los estilos de error previos
+        form.querySelectorAll('.input-error').forEach(field => {
+            field.classList.remove('input-error');
+        });
+
+        // Verificar si todos los campos requeridos están llenos
+        form.querySelectorAll('[required]').forEach(field => {
+            if (!field.value.trim()) {
+                valid = false;
+                field.classList.add('input-error');  // Resaltar el campo vacío
+                alert(`Por favor, complete el campo: ${field.name}`);  // Alerta con el mensaje correspondiente
+            }
+        });
+
+        // Verificar si algún campo de selección está vacío
+        form.querySelectorAll('select').forEach(select => {
+            if (!select.value) {
+                valid = false;
+                select.classList.add('input-error');  // Resaltar el campo select vacío
+                alert(`Por favor, seleccione una opción en el campo: ${select.name}`);  // Alerta con el mensaje correspondiente
+            }
+        });
+
+        if (!valid) return;
+
+        // Si la validación es exitosa, enviar el formulario
+        const response = await fetch("{% url 'guardar_pqrsf' %}", {
+            method: "POST",
+            body: formData,
+            headers: {
+                'X-CSRFToken': form.querySelector('[name=csrfmiddlewaretoken]').value
+            }
+        });
+        const result = await response.json();
+        if (result.success) {
+            alert(result.message);  // Mensaje de éxito
+            form.reset(); // Limpiar el formulario
+        } else {
+            alert(result.message);  // Mensaje de error
+        }
+    });
+</script>
+{% endblock %}

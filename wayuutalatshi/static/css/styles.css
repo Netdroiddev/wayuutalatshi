@@ -1,0 +1,394 @@
+body {
+  background-color: #c7d4cd !important;
+}
+
+/* Top Banner */
+.top-banner {
+  font-size: 14px;
+  background-color: #89be97;
+  color: #23642d;
+}
+
+/* Header */
+.header .logo-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.header .info-section {
+  flex: 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+}
+
+.info-item p {
+  margin: 0;
+  color: #23634e; /* Color verde para las letras */
+}
+
+/* Navbar */
+.navbar .nav-link {
+  color: #fff !important;
+}
+
+.navbar .nav-link:hover {
+  background-color: #006f34;
+  border-radius: 5px;
+}
+
+
+/* Carousel */
+.carousel-inner img {
+  max-height: 500px;
+  object-fit: cover;
+}
+
+/* Footer */
+.footer p {
+  margin: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .header .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header .logo-section {
+    order: 1;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .header .logo-section img {
+    height: 80px;
+  }
+
+  .header .info-section {
+    order: 2;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: nowrap;
+  }
+
+  .header .info-item {
+    margin-bottom: 1rem;
+  }
+
+  .header .info-item i {
+    font-size: 1.5rem;
+  }
+
+  .header .info-item p {
+    font-size: 0.9rem;
+  }
+
+  .navbar .navbar-nav {
+    text-align: center;
+  }
+
+  .navbar .nav-item {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .header .logo-section img {
+    height: 60px;
+  }
+
+  .header .info-section {
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+
+  .header .info-item {
+    margin-bottom: 0.5rem;
+  }
+
+  .header .info-item i {
+    font-size: 1.2rem;
+  }
+
+  .header .info-item p {
+    font-size: 0.8rem;
+  }
+}
+
+/* Footer Logo */
+.footer-logo {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Adjustments for Info Section */
+.info-item {
+  max-width: 300px; /* Tamaño máximo para mantener consistencia */
+  flex: 1 1 100%; /* Asegura que ocupen el 100% del ancho en pantallas pequeñas */
+  text-align: center; /* Centra los elementos */
+}
+
+.info-item i {
+  font-size: 2rem; /* Tamaño inicial del ícono */
+}
+
+.info-item p {
+  margin: 0;
+}
+
+.footer-logos h2 {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.footer-logo {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.footer-logo:hover {
+  transform: scale(1.1); /* Aumenta el tamaño ligeramente al pasar el cursor */
+  opacity: 0.8; /* Reduce un poco la opacidad */
+}
+
+/* Header Info Section Updates */
+.header .info-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* Asegura una distribución uniforme */
+  align-items: center;
+  gap: 20px; /* Espaciado entre las tarjetas */
+}
+
+.info-item {
+  flex: 1 1 30%; /* Ocupa un tercio del espacio disponible */
+  max-width: 300px; /* Limita el ancho máximo */
+  text-align: center; /* Centra el contenido */
+  display: flex;
+  flex-direction: column; /* Alineación vertical */
+  align-items: center; /* Centra horizontalmente */
+}
+
+.info-item i {
+  font-size: 2rem; /* Tamaño del ícono */
+  color: inherit; /* Usa el color definido en el HTML */
+  margin-bottom: 10px; /* Espaciado entre el ícono y el texto */
+}
+
+.info-item p {
+  margin: 0;
+  font-size: 1rem; /* Tamaño del texto */
+  line-height: 1.4; /* Mejora la legibilidad */
+}
+
+
+@media (max-width: 576px) {
+  .header .info-section {
+    flex-direction: column; /* Apila las tarjetas verticalmente */
+    gap: 10px;
+  }
+
+  .info-item {
+    flex: 1 1 100%; /* Cada tarjeta ocupa todo el ancho */
+    max-width: 100%; /* Sin límites de ancho */
+  }
+
+  .info-item i {
+    font-size: 1.5rem; /* Íconos más pequeños */
+  }
+
+  .info-item p {
+    font-size: 0.8rem; /* Texto más pequeño */
+  }
+}
+
+.carousel-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.slide-image {
+  width: 100%;
+  height: auto;
+  filter: brightness(0.7); /* Reduce el brillo para mayor transparencia */
+  object-fit: cover; /* Ajusta la imagen para que cubra el contenedor */
+}
+
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+  padding: 1.5rem;
+  border-radius: 8px; /* Bordes redondeados */
+}
+
+.text-white {
+  color: #fff;
+}
+
+.text-light {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.loader {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.text-primary {
+  color: #2980b9 !important;
+}
+
+
+.navbar .navbar-brand {
+  font-size: 1.2rem; /* Controla el tamaño de la marca */
+}
+.whatsapp {
+  position: fixed;
+  width: 80px; /* Aumenta el tamaño del botón */
+  height: 80px; /* Aumenta el tamaño del botón */
+  bottom: 20px; /* Ajusta la distancia desde la parte inferior */
+  right: 20px; /* Ajusta la distancia desde la parte derecha */
+  background-color: #25d366; /* Color verde de WhatsApp */
+  color: #FFF;
+  border-radius: 50%; /* Hace que el botón sea circular */
+  text-align: center;
+  font-size: 40px; /* Aumenta el tamaño del icono */
+  z-index: 1000; /* Asegura que el botón esté por encima de otros elementos */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Añade sombra para destacar el botón */
+  transition: transform 0.2s; /* Efecto al pasar el mouse */
+}
+
+.whatsapp:hover {
+  transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el mouse */
+}
+
+.whatsapp-icon {
+  margin-top: 20px; /* Ajusta el icono para centrarlo verticalmente */
+}
+
+
+.custom-width {
+  width: 60%; /* Ajusta el porcentaje según tus necesidades */
+  max-width: 66px; /* Opcional: establece un ancho máximo */
+}
+
+
+/* Estilo personalizado para <h1> */
+h1.display-1 {
+  font-size: 2.5rem; /* Tamaño del texto */
+  color: #28a745; /* Color verde (success) */
+  font-weight: bold; /* Negrita */
+  margin-top: 1.5rem; /* Espaciado superior */
+  text-align: center; /* Centrado */
+  font-family: 'Arial', sans-serif; /* Fuente personalizada */
+  text-transform: uppercase; /* Todo en mayúsculas (opcional) */
+}
+
+/* Estilo personalizado para <h2> */
+h2.display-2 {
+  font-size: 1.5rem; /* Tamaño del texto */
+  color: #007bff; /* Color azul (primary) */
+  font-weight: 600; /* Semi-negrita */
+  margin-top: 1rem; /* Espaciado superior */
+  text-align: center; /* Centrado */
+  font-family: 'Verdana', sans-serif; /* Fuente personalizada */
+  letter-spacing: 1px; /* Espaciado entre letras */
+}
+
+/* Estilos generales */
+.custom-form {
+  max-width: 600px;
+  margin: 0 auto; /* Centrar el formulario */
+}
+
+.custom-form input,
+.custom-form select,
+.custom-form textarea {
+  width: 100%; /* Asegura que los campos ocupen el ancho completo */
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.custom-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.custom-form button:hover {
+  background-color: #218838;
+}
+
+/* Responsividad con media queries */
+@media (max-width: 768px) {
+  .custom-form {
+    max-width: 100%; /* El formulario ocupa todo el ancho */
+    padding: 0 10px; /* Espaciado interno */
+  }
+
+  .custom-form input,
+  .custom-form select,
+  .custom-form textarea {
+    font-size: 14px; /* Tamaño de fuente más pequeño */
+  }
+
+  .custom-form button {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+#carousel-section .carousel-item img {
+  width: 100%;
+  height: auto;
+}
+
+#carousel-section .carousel-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  text-align: center;
+  word-wrap: break-word;
+}
+
+#carousel-section .carousel-caption h3 {
+  font-size: 1.25rem;
+  opacity: 0.8;
+}
+
+#carousel-section .carousel-caption p {
+  font-size: 0.875rem;
+  opacity: 0.8;
+}
+

@@ -1,0 +1,39 @@
+/* Personalización de la tarjeta del formulario */
+.card {
+    max-width: 100%;  /* Esto asegura que la tarjeta ocupe todo el ancho disponible */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con algo de transparencia */
+}
+
+/* Espaciado del texto del formulario */
+.card .form-label {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Estilo de los botones */
+.btn-success {
+    font-size: 1rem;
+    padding: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #006400; /* Verde oscuro */
+    color: white;
+    padding: 15px 0;
+}
+
+/* Fondo del body */
+body {
+    background-color: #f0f0f0; /* Color de fondo claro */
+}
+
+/* Fondo transparente para el formulario */
+.form-background {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro con 50% de opacidad */
+    padding: 20px;
+    border-radius: 10px;
+}
+
