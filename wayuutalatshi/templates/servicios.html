@@ -4,65 +4,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
-        /* Establecer color de fondo con !important para la sección de servicios */
-        #serviciosContainer {
-            background-color: #f8f9fa !important;  /* Un fondo gris claro */
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 40px; /* Espacio adicional debajo de los servicios */
-            position: relative; /* Evita que el contenedor se superponga a otros elementos */
-            z-index: 1; /* Asegura que el contenedor de servicios se mantenga arriba */
-        }
-
-        /* Hacer los botones más pequeños */
-        .service-item .toggle-button {
-            font-size: 14px; /* Reducir el tamaño de la fuente */
-            padding: 8px; /* Reducir el tamaño del padding */
-            font-weight: bold;
-        }
-
-        /* Mejorar la visibilidad de las descripciones ocultas */
-        .service-description {
-            margin-top: 10px;
-            font-size: 12px; /* Reducir tamaño de texto de la descripción */
-            color: #6c757d; /* Color gris para el texto */
-        }
-
         .hidden-service {
             display: none; /* Oculta los servicios */
-        }
-
-        /* Asegurarse de que las descripciones largas tengan más espacio */
-        .service-long-description {
-            margin-top: 15px;
-            font-size: 14px;
-            color: #495057;
-        }
-
-        /* Añadir espaciado en los párrafos dentro de las descripciones largas */
-        .service-long-description p {
-            line-height: 1.6;
-        }
-
-        /* Añadir clases de Bootstrap para mejorar la presentación */
-        .service-item {
-            max-width: 400px; /* Limitar el ancho de cada servicio */
-            margin: 0 auto 20px auto; /* Centrarlos y darles espacio entre ellos */
-            padding: 15px;
-            background-color: #ffffff;
-            border-radius: 8px; /* Bordes redondeados */
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Agregar sombra */
-        }
-
-        /* Añadir espacio al final de los servicios sin afectar otros elementos */
-        .container {
-            margin-bottom: 60px; /* Añadir un margen al fondo de la página */
-        }
-
-        /* Asegurarse de que el contenedor de los servicios no afecte a otros elementos */
-        .service-item-wrapper {
-            position: relative;
-            z-index: 10; /* Asegura que las tarjetas de servicio no se sobrepongan */
         }
     </style>
 {% endblock %}
@@ -75,95 +18,12 @@
     <p class="text-center text-muted">Conoce más sobre los servicios que ofrecemos y sus beneficios.</p>
     <div id="serviciosContainer">
         {% for servicio in servicios %}
-        <div class="service-item-wrapper">
-            <div class="service-item" id="servicio-{{ forloop.counter }}">
-                <button class="btn btn-success w-100 mb-2 toggle-button" data-id="{{ forloop.counter }}">
-                    <strong>{{ servicio.nombre }}</strong>
-                </button>
-                <div class="service-description hidden-service" id="descripcion-{{ forloop.counter }}">
-                    <p>{{ servicio.descripcion }}</p> <!-- Descripción corta -->
-                </div>
-                <div class="service-long-description hidden-service" id="long-descripcion-{{ forloop.counter }}">
-                    <p>
-                        <!-- Descripción larga -->
-                        {% if servicio.nombre == "Enfermería" %}
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title">Enfermería: Atención Integral</h5>
-                                    <p class="card-text">
-                                        La enfermería es una disciplina clave en el cuidado de la salud, y en nuestra institución nos especializamos en ofrecer un servicio integral y de calidad para todos nuestros pacientes. Este servicio abarca desde procedimientos básicos hasta los más avanzados, siempre enfocados en la atención personalizada y el bienestar de los pacientes.
-                                    </p>
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item">Administración de medicamentos</li>
-                                        <li class="list-group-item">Cuidado de heridas</li>
-                                        <li class="list-group-item">Toma de signos vitales</li>
-                                        <li class="list-group-item">Tratamientos y terapias</li>
-                                        <li class="list-group-item">Atención en emergencias</li>
-                                    </ul>
-                                    <p class="mt-3">
-                                        Además, brindamos asesoramiento sobre salud preventiva y educación sobre hábitos saludables para prevenir enfermedades comunes. En nuestro centro, la enfermería no es solo un servicio de cuidado físico, sino también emocional, apoyando a los pacientes en su proceso de recuperación y bienestar integral.
-                                    </p>
-                                </div>
-                            </div>
-                        {% elif servicio.nombre == "Fisioterapia" %}
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title">Fisioterapia: Recuperación Física</h5>
-                                    <p class="card-text">
-                                        La fisioterapia se enfoca en la rehabilitación y mejora de la movilidad física de nuestros pacientes. Ofrecemos servicios para tratar lesiones musculares, articulares y de tejidos blandos, utilizando técnicas avanzadas para optimizar la recuperación y prevenir futuras complicaciones.
-                                    </p>
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item">Tratamientos de lesiones deportivas</li>
-                                        <li class="list-group-item">Rehabilitación post-quirúrgica</li>
-                                        <li class="list-group-item">Ejercicios terapéuticos</li>
-                                        <li class="list-group-item">Terapias manuales</li>
-                                    </ul>
-                                    <p class="mt-3">
-                                        Nuestro equipo de fisioterapeutas está altamente capacitado para diseñar planes personalizados de recuperación y bienestar, ayudando a los pacientes a alcanzar una mejor calidad de vida mediante terapias eficaces y accesibles.
-                                    </p>
-                                </div>
-                            </div>
-                        {% elif servicio.nombre == "Psicología" %}
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title">Psicología: Bienestar Emocional</h5>
-                                    <p class="card-text">
-                                        Nuestro servicio de psicología está diseñado para ofrecer apoyo emocional y psicológico a nuestros pacientes. Contamos con profesionales capacitados para atender una variedad de necesidades, desde ansiedad y depresión hasta estrés y trastornos emocionales más complejos.
-                                    </p>
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item">Terapias individuales y grupales</li>
-                                        <li class="list-group-item">Manejo del estrés</li>
-                                        <li class="list-group-item">Asesoramiento familiar</li>
-                                        <li class="list-group-item">Intervenciones en crisis</li>
-                                    </ul>
-                                    <p class="mt-3">
-                                        Además, ofrecemos programas de prevención y promoción de la salud mental, ayudando a los pacientes a mejorar su bienestar emocional y a enfrentar los desafíos de la vida diaria de manera positiva y constructiva.
-                                    </p>
-                                </div>
-                            </div>
-                        {% elif servicio.nombre == "Nutrición" %}
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title">Nutrición: Alimentación Saludable</h5>
-                                    <p class="card-text">
-                                        El servicio de nutrición está orientado a promover una alimentación equilibrada y saludable para nuestros pacientes. Nuestros nutricionistas brindan asesoramiento personalizado para mejorar hábitos alimenticios y tratar condiciones de salud como la obesidad, diabetes y trastornos digestivos.
-                                    </p>
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item">Planes nutricionales personalizados</li>
-                                        <li class="list-group-item">Asesoramiento para condiciones específicas</li>
-                                        <li class="list-group-item">Educación nutricional</li>
-                                        <li class="list-group-item">Suplementación y control de peso</li>
-                                    </ul>
-                                    <p class="mt-3">
-                                        Trabajamos de cerca con cada paciente para establecer objetivos realistas y sostenibles, promoviendo una salud integral basada en una dieta balanceada y hábitos de vida saludables.
-                                    </p>
-                                </div>
-                            </div>
-                        {% else %}
-                            Información detallada sobre el servicio {{ servicio.nombre }}.
-                        {% endif %}
-                    </p>
-                </div>
+        <div class="service-item" id="servicio-{{ forloop.counter }}">
+            <button class="btn btn-success w-100 mb-2 toggle-button" data-id="{{ forloop.counter }}">
+                <strong>{{ servicio.codigo }} - {{ servicio.nombre }}</strong>
+            </button>
+            <div class="service-description hidden-service" id="descripcion-{{ forloop.counter }}">
+                <p>{{ servicio.descripcion }}</p>
             </div>
         </div>
         {% endfor %}
@@ -176,16 +36,13 @@
         buttons.forEach(button => {
             button.addEventListener('click', () => {
                 const id = button.dataset.id;
-                const shortDescription = document.getElementById(`descripcion-${id}`);
-                const longDescription = document.getElementById(`long-descripcion-${id}`);
-                const allShortDescriptions = document.querySelectorAll('.service-description');
-                const allLongDescriptions = document.querySelectorAll('.service-long-description');
+                const description = document.getElementById(`descripcion-${id}`);
+                const allDescriptions = document.querySelectorAll('.service-description');
                 const allServices = document.querySelectorAll('.service-item');
 
                 // Si el contenido ya está visible, restaurar todo
-                if (!shortDescription.classList.contains('hidden-service')) {
-                    allShortDescriptions.forEach(desc => desc.classList.add('hidden-service'));
-                    allLongDescriptions.forEach(desc => desc.classList.add('hidden-service'));
+                if (!description.classList.contains('hidden-service')) {
+                    allDescriptions.forEach(desc => desc.classList.add('hidden-service'));
                     allServices.forEach(service => service.style.display = 'block');
                 } else {
                     // Ocultar todos los servicios menos el seleccionado
@@ -194,11 +51,9 @@
                     });
                     document.getElementById(`servicio-${id}`).style.display = 'block';
 
-                    // Mostrar solo la descripción corta y larga del servicio seleccionado
-                    allShortDescriptions.forEach(desc => desc.classList.add('hidden-service'));
-                    allLongDescriptions.forEach(desc => desc.classList.add('hidden-service'));
-                    shortDescription.classList.remove('hidden-service');
-                    longDescription.classList.remove('hidden-service');
+                    // Mostrar solo la descripción del servicio seleccionado
+                    allDescriptions.forEach(desc => desc.classList.add('hidden-service'));
+                    description.classList.remove('hidden-service');
                 }
             });
         });
